@@ -6,6 +6,12 @@ use App\Repository\UtilisateurRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: UtilisateurRepository::class)]
+// ajouté pour joindre Membre
+#[ORM\InheritanceType('JOINED')]
+#[ORM\DiscriminatorColumn(name: 'discr', type: 'string')]
+#[ORM\DiscriminatorMap(['utilisateur' => Utilisateur::class, 'membre' => Membre::class])]
+// fin ajout
+
 class Utilisateur
 {
     #[ORM\Id]
@@ -19,7 +25,7 @@ class Utilisateur
     #[ORM\Column(length: 255)]
     private ?string $nom = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, unique: true)]
     private ?string $email = null;
 
     #[ORM\Column(length: 255)]
