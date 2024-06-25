@@ -9,11 +9,6 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity(repositoryClass: MembreRepository::class)]
 class Membre extends Utilisateur
 {
-    #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column]
-    private ?int $id = null;
-
     #[ORM\Column(length: 255)]
     private ?string $numLicence = null;
 
@@ -35,10 +30,6 @@ class Membre extends Utilisateur
     #[ORM\Column(length: 255)]
     private ?string $cp = null;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
 
     public function getNumLicence(): ?string
     {
