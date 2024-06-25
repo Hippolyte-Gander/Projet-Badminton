@@ -40,18 +40,18 @@ class Utilisateur
      * @var Collection<int, Evenement>
      */
     #[ORM\OneToMany(targetEntity: Evenement::class, mappedBy: 'utilisateur')]
-    private Collection $cree;
+    private Collection $creer;
 
     /**
      * @var Collection<int, Commentaire>
      */
     #[ORM\OneToMany(targetEntity: Commentaire::class, mappedBy: 'utilisateur')]
-    private Collection $poste;
+    private Collection $poster;
 
     public function __construct()
     {
-        $this->cree = new ArrayCollection();
-        $this->poste = new ArrayCollection();
+        $this->creer = new ArrayCollection();
+        $this->poster = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -122,27 +122,27 @@ class Utilisateur
     /**
      * @return Collection<int, Evenement>
      */
-    public function getCree(): Collection
+    public function getCreer(): Collection
     {
-        return $this->cree;
+        return $this->creer;
     }
 
-    public function addCree(Evenement $cree): static
+    public function addCreer(Evenement $creer): static
     {
-        if (!$this->cree->contains($cree)) {
-            $this->cree->add($cree);
-            $cree->setUtilisateur($this);
+        if (!$this->creer->contains($creer)) {
+            $this->creer->add($creer);
+            $creer->setUtilisateur($this);
         }
 
         return $this;
     }
 
-    public function removeCree(Evenement $cree): static
+    public function removeCreer(Evenement $creer): static
     {
-        if ($this->cree->removeElement($cree)) {
+        if ($this->creer->removeElement($creer)) {
             // set the owning side to null (unless already changed)
-            if ($cree->getUtilisateur() === $this) {
-                $cree->setUtilisateur(null);
+            if ($creer->getUtilisateur() === $this) {
+                $creer->setUtilisateur(null);
             }
         }
 
@@ -152,30 +152,36 @@ class Utilisateur
     /**
      * @return Collection<int, Commentaire>
      */
-    public function getPoste(): Collection
+    public function getPoster(): Collection
     {
-        return $this->poste;
+        return $this->poster;
     }
 
-    public function addPoste(Commentaire $poste): static
+    public function addPoster(Commentaire $poster): static
     {
-        if (!$this->poste->contains($poste)) {
-            $this->poste->add($poste);
-            $poste->setUtilisateur($this);
+        if (!$this->poster->contains($poster)) {
+            $this->poster->add($poster);
+            $poster->setUtilisateur($this);
         }
 
         return $this;
     }
 
-    public function removePoste(Commentaire $poste): static
+    public function removePoster(Commentaire $poster): static
     {
-        if ($this->poste->removeElement($poste)) {
+        if ($this->poster->removeElement($poster)) {
             // set the owning side to null (unless already changed)
-            if ($poste->getUtilisateur() === $this) {
-                $poste->setUtilisateur(null);
+            if ($poster->getUtilisateur() === $this) {
+                $poster->setUtilisateur(null);
             }
         }
 
         return $this;
     }
+
+    public function __toString()
+    {
+        return $this->prenom." ".$this->nom;
+    }
+
 }
