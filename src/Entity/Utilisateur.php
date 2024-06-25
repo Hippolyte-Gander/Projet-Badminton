@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UtilisateurRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: UtilisateurRepository::class)]
@@ -33,6 +35,24 @@ class Utilisateur
 
     #[ORM\Column(length: 255)]
     private ?string $role = null;
+
+    /**
+     * @var Collection<int, Evenement>
+     */
+    #[ORM\OneToMany(targetEntity: Evenement::class, mappedBy: 'utilisateur')]
+    private Collection $cree;
+
+    /**
+     * @var Collection<int, Commentaire>
+     */
+    #[ORM\OneToMany(targetEntity: Commentaire::class, mappedBy: 'utilisateur')]
+    private Collection $poste;
+
+    public function __construct()
+    {
+        $this->cree = new ArrayCollection();
+        $this->poste = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -95,6 +115,66 @@ class Utilisateur
     public function setRole(string $role): static
     {
         $this->role = $role;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Evenement>
+     */
+    public function getCree(): Collection
+    {
+        return $this->cree;
+    }
+
+    public function addCree(Evenement $cree): static
+    {
+        if (!$this->cree->contains($cree)) {
+            $this->cree->add($cree);
+            $cree->setUtilisateur($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCree(Evenement $cree): static
+    {
+        if ($this->cree->removeElement($cree)) {
+            // set the owning side to null (unless already changed)
+            if ($cree->getUtilisateur() === $this) {
+                $cree->setUtilisateur(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Commentaire>
+     */
+    public function getPoste(): Collection
+    {
+        return $this->poste;
+    }
+
+    public function addPoste(Commentaire $poste): static
+    {
+        if (!$this->poste->contains($poste)) {
+            $this->poste->add($poste);
+            $poste->setUtilisateur($this);
+        }
+
+        return $this;
+    }
+
+    public function removePoste(Commentaire $poste): static
+    {
+        if ($this->poste->removeElement($poste)) {
+            // set the owning side to null (unless already changed)
+            if ($poste->getUtilisateur() === $this) {
+                $poste->setUtilisateur(null);
+            }
+        }
 
         return $this;
     }

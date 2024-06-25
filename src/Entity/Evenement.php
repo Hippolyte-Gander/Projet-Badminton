@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\EvenementRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -31,6 +33,20 @@ class Evenement
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $visibilite = null;
+
+    #[ORM\ManyToOne(inversedBy: 'cree')]
+    private ?Utilisateur $utilisateur = null;
+
+    /**
+     * @var Collection<int, Commentaire>
+     */
+    #[ORM\OneToMany(targetEntity: Commentaire::class, mappedBy: 'evenement', orphanRemoval: true)]
+    private Collection $appartient;
+
+    public function __construct()
+    {
+        $this->appartient = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -105,6 +121,48 @@ class Evenement
     public function setVisibilite(?string $visibilite): static
     {
         $this->visibilite = $visibilite;
+
+        return $this;
+    }
+
+    public function getUtilisateur(): ?Utilisateur
+    {
+        return $this->utilisateur;
+    }
+
+    public function setUtilisateur(?Utilisateur $utilisateur): static
+    {
+        $this->utilisateur = $utilisateur;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Commentaire>
+     */
+    public function getAppartient(): Collection
+    {
+        return $this->appartient;
+    }
+
+    public function addAppartient(Commentaire $appartient): static
+    {
+        if (!$this->appartient->contains($appartient)) {
+            $this->appartient->add($appartient);
+            $appartient->setEvenement($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAppartient(Commentaire $appartient): static
+    {
+        if ($this->appartient->removeElement($appartient)) {
+            // set the owning side to null (unless already changed)
+            if ($appartient->getEvenement() === $this) {
+                $appartient->setEvenement(null);
+            }
+        }
 
         return $this;
     }
