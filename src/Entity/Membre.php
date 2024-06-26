@@ -30,6 +30,9 @@ class Membre extends Utilisateur
     #[ORM\Column(length: 255)]
     private ?string $cp = null;
 
+    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $dateNaissance = null;
+
 
     public function getNumLicence(): ?string
     {
@@ -54,6 +57,15 @@ class Membre extends Utilisateur
 
         return $this;
     }
+
+    //date format fr
+    public function dateDinscriptionFormatee(): ?string
+    {
+        return $this->dateInscription->format('d/m/Y');
+    }
+
+
+    //durée inscription en mois + années
 
     public function getNumTel(): ?string
     {
@@ -118,5 +130,23 @@ class Membre extends Utilisateur
     public function __toString()
     {
         return $this->numLicence;
+    }
+
+    public function getDateNaissance(): ?\DateTimeInterface
+    {
+        return $this->dateNaissance;
+    }
+
+    public function setDateNaissance(?\DateTimeInterface $dateNaissance): static
+    {
+        $this->dateNaissance = $dateNaissance;
+
+        return $this;
+    }
+
+    //date format fr
+    public function dateNaissanceFormatee(): ?string
+    {
+        return $this->dateNaissance->format('d/m/Y');
     }
 }

@@ -3,11 +3,12 @@
 {% block title %}Détails membre{% endblock %}
 
 {% block body %}
-<h1>Détails de {{ membre }} </h1>
+{# <h1>Détails de {{ membre.utilisateur }} </h1> #}
 
-    <p>Nom : {{ membre.nom}}</p>
-    <p>Prénom : {{ membre.prenom}}</p>
-    <p>Email : {{ membre.email}}</p>
-    <p>Rôle : {{ membre.role}}</p>
+    {# <p>Nom : {{ membre.utilisateur.nom}}</p>
+    <p>Prénom : {{ membre.utilisateur.prenom}}</p>
+    <p>Prénom : {{ membre.dateInscriptionFormatee}}</p>
+    <p>Email : {{ membre.utilisateur.email}}</p>
+    <p>Rôle : {{ membre.utilisateur.role}}</p> #}
 
 {% endblock %}
