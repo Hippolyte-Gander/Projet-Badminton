@@ -19,4 +19,12 @@ class UtilisateurController extends AbstractController
             'utilisateurs' => $utilisateurs
         ]);
     }
+
+    #[Route('/utilisateur/{id}', name: 'show_utilisateur')]
+    public function show(Utilisateur $utilisateur): Response
+    {
+        return $this->render('utilisateur/show.html.twig', [
+            'utilisateur' => $utilisateur
+        ]);
+    }
 }
