@@ -59,3 +59,22 @@ main {
     /* background-position: center; */
 }
 
+.club {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    color: white;
+    padding: 80px;
+    width: 80%;
+}
+
+.club-description, .club-entrainements, .club-activites {
+    padding: 20px;
+    background: rgba(15, 15, 15, 0.384);
+    border: solid red;
+}
+
+.club-droite, .club-gauche {
+    display: flex;
+    width: 40%;
+}
