@@ -7,11 +7,19 @@
     font-family: 'Roboto', sans-serif;
 }
 
+.title {
+    width: 100%;
+    padding: 50px 0px;
+    align-items: center;
+    text-align: center;
+    border: solid red;
+}
+
 h1 {
-    color: red;
-    margin-top: 80px;
+    color: rgb(255, 255, 255);
     font-family: Poppins;
     font-weight: 800;
+    font-size: clamp(2rem, 7.5vw + .5rem, 4rem);
 }
 
 header {
@@ -38,6 +46,7 @@ a {
 }
 
 nav {
+    font-size: 1.25rem;
     display: flex;
     gap: 30px;
 }
@@ -49,3 +58,4 @@ main {
     background-size: cover;
     /* background-position: center; */
 }
+
