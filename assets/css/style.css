@@ -51,6 +51,53 @@ nav {
     gap: 30px;
 }
 
+nav a:hover {
+    text-decoration: underline;
+    color:  rgb(255, 255, 255);
+}
+
+.login {
+    display: flex;
+    gap: 20px;
+}
+
+.connexion {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    padding: 10px 15px;
+}
+
+.deconnexion {
+    background-color: rgb(0, 0, 0);
+    border: solid white;
+    border-width: 1px;
+    border-radius: 5px;
+    padding: 9px 14px;
+}
+
+.inscription {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    padding: 10px 15px;
+}
+
+.connexion:hover {
+    text-decoration: underline;
+    color:  rgb(0, 0, 0);
+}
+
+.deconnexion:hover {
+    text-decoration: underline;
+    color:  rgb(255, 255, 255);
+}
+
+.inscription:hover {
+    text-decoration: underline;
+    color:  rgb(0, 0, 0);
+}
+
 main {
     margin-top: 80px;
     min-height: 100vh;
@@ -65,16 +112,22 @@ main {
     flex-wrap: wrap;
     color: white;
     padding: 80px;
-    width: 80%;
+    align-items: center;
+    min-width: 8rem;
 }
 
 .club-description, .club-entrainements, .club-activites {
     padding: 20px;
     background: rgba(15, 15, 15, 0.384);
     border: solid red;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.club-droite, .club-gauche {
-    display: flex;
-    width: 40%;
+.club-description img {
+    max-height: 50dvh;
 }
+
+/* .img-president {
+    max-height: 0.8dvh;
+} */
