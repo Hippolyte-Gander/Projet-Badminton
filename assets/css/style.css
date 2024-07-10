@@ -107,27 +107,25 @@ main {
 }
 
 .club {
+    color: white;
+    padding: 100px;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    color: white;
-    padding: 80px;
-    align-items: center;
-    min-width: 8rem;
 }
 
 .club-description, .club-entrainements, .club-activites {
+    display: flex;
+    flex-direction: row;
+}
+
+.club img {
+    width: 50dvh;
+    margin: 30px;
+}
+
+.titre-texte {
     padding: 20px;
+    margin: 30px;
     background: rgba(15, 15, 15, 0.384);
     border: solid red;
-    display: flex;
-    flex-wrap: wrap;
 }
-
-.club-description img {
-    max-height: 50dvh;
-}
-
-/* .img-president {
-    max-height: 0.8dvh;
-} */
