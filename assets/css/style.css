@@ -5,7 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    color: black;
+    color: rgb(15, 15, 15);
 }
 
 /* --------------- NAVBAR ---------------- */
@@ -16,7 +16,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgb(15, 15, 15);
+    background: rgb(22, 22, 22);
     padding: 20px 100px;
     display: flex;
     justify-content: space-between;
@@ -173,7 +173,18 @@ h3 {
     color: white;
 }
 
-/* --------------- LISTE UTILISATEUR ---------------- */
+/* --------------- LISTE UTILISATEURS ---------------- */
+
+h4 {
+    color: black;
+    padding: 100px 0px 20px 0px;
+}
+
+.texte-utilisateur {
+    color: black;
+}
+
+/* --------------- LISTE MEMBRES ---------------- */
 
 h4 {
     color: black;
