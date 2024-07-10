@@ -5,22 +5,11 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    color: black;
 }
 
-.title {
-    width: 100%;
-    padding: 50px 0px;
-    align-items: center;
-    text-align: center;
-    border: solid red;
-}
+/* --------------- NAVBAR ---------------- */
 
-h1 {
-    color: rgb(255, 255, 255);
-    font-family: Poppins;
-    font-weight: 800;
-    font-size: clamp(2rem, 7.5vw + .5rem, 4rem);
-}
 
 header {
     position: fixed;
@@ -98,6 +87,45 @@ nav a:hover {
     color:  rgb(0, 0, 0);
 }
 
+/* --------------- FOOTER ---------------- */
+
+footer {
+    background-color: rgb(236, 236, 236);
+    color: black;
+    height: 70px;
+    font-size: 1.25rem;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+footer a {
+    color: black;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color:  rgb(0, 0, 0);
+}
+
+/* --------------- TITRE PRINCIPAL ---------------- */
+
+.title {
+    width: 100%;
+    padding: 50px 0px;
+    align-items: center;
+    text-align: center;
+    border: solid red;
+}
+
+h1 {
+    color: rgb(255, 255, 255);
+    font-family: Poppins;
+    font-weight: 800;
+    font-size: clamp(2rem, 7.5vw + .5rem, 4rem);
+}
+
 main {
     margin-top: 80px;
     min-height: 100vh;
@@ -106,14 +134,18 @@ main {
     /* background-position: center; */
 }
 
+/* --------------- PAGE ACCUEIL ---------------- */
+
 .club {
     color: white;
-    padding: 100px;
+    padding: 180px;
     display: flex;
     flex-direction: column;
 }
 
-.club-description, .club-entrainements, .club-activites {
+.club-description,
+.club-entrainements,
+.club-activites {
     display: flex;
     flex-direction: row;
 }
@@ -128,4 +160,26 @@ main {
     margin: 30px;
     background: rgba(15, 15, 15, 0.384);
     border: solid red;
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 2rem;
+    padding: 20px 0px;
+}
+
+.titre-texte p,
+.titre-texte h3 {
+    color: white;
+}
+
+/* --------------- LISTE UTILISATEUR ---------------- */
+
+h4 {
+    color: black;
+    padding: 100px 0px 20px 0px;
+}
+
+.texte-utilisateur {
+    color: black;
 }

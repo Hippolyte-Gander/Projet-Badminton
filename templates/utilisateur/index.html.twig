@@ -3,10 +3,10 @@
 {% block title %}Liste utilisateurs{% endblock %}
 
 {% block body %}
-<h1>Liste des utilisateurs</h1>
+<h4>Liste des utilisateurs</h4>
 
 {% for utilisateur in utilisateurs %}
-    <p><a href=" {{ path('show_utilisateur', {'id': utilisateur.id}) }} ">{{ utilisateur}}</a></p>
+    <p class="texte-utilisateur"><a href=" {{ path('show_utilisateur', {'id': utilisateur.id}) }} " class="texte-utilisateur">{{ utilisateur}}</a></p>
 {% endfor %}
 
 {% endblock %}
