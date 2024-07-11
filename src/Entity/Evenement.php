@@ -35,7 +35,7 @@ class Evenement
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $visibilite = null;
 
-    #[ORM\ManyToOne(inversedBy: 'cree')]
+    #[ORM\ManyToOne(inversedBy: 'creer')]
     private ?Utilisateur $utilisateur = null;
 
     /**

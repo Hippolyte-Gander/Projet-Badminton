@@ -126,6 +126,8 @@ h1 {
     font-size: clamp(2rem, 7.5vw + .5rem, 4rem);
 }
 
+/* --------------- PAGE ACCUEIL ---------------- */
+
 main {
     margin-top: 80px;
     min-height: 100vh;
@@ -133,8 +135,6 @@ main {
     background-size: cover;
     /* background-position: center; */
 }
-
-/* --------------- PAGE ACCUEIL ---------------- */
 
 .club {
     color: white;
@@ -173,18 +173,11 @@ h3 {
     color: white;
 }
 
-/* --------------- LISTE UTILISATEURS ---------------- */
-
-h4 {
-    color: black;
-    padding: 100px 0px 20px 0px;
+.prochain-evenement {
+    background: rgb(15, 15, 15);
 }
 
-.texte-utilisateur {
-    color: black;
-}
-
-/* --------------- LISTE MEMBRES ---------------- */
+/* --------------- GÉNÉRAL ---------------- */
 
 h4 {
     color: black;

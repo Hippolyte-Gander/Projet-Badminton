@@ -5,8 +5,8 @@
 {% block body %}
 <h1>Liste des événements</h1>
 
-{% for evenements in evenements %}
-    <p><a href=" {{ path('show_evenement', {'id': evenement.id}) }} ">{{ evenement }}</a></p>
+{% for evenement in evenements %}
+    <p><a class="texte-utilisateur" href=" {{ path('show_evenement', {'id': evenement.id}) }} ">{{ evenement }}</a></p>
 {% endfor %}
 
 {% endblock %}

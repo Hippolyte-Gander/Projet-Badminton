@@ -6,7 +6,7 @@
 <h1>Liste des membres</h1>
 
 {% for membre in membres %}
-    <p><a href=" {{ path('show_membre', {'id': membre.id}) }} ">{{ membre}}</a></p>
+    <p><a class="texte-utilisateur" href=" {{ path('show_membre', {'id': membre.id}) }} ">{{ membre}}</a></p>
 {% endfor %}
 
 {% endblock %}
