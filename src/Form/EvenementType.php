@@ -17,16 +17,49 @@ class EvenementType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('titre', TextType::class)
-            ->add('description', TextType::class)
-            ->add('contenu', TextType::class)
-            ->add('dateDebut', DateType::class)
-            ->add('dateFin', DateType::class)
-            ->add('visibilite', TextType::class)
+            ->add('titre', TextType::class, [
+                'attr'=> [
+                    'class'=> 'texte-formulaire'
+                ]
+            ])
+            ->add('description', TextType::class, [
+                'attr'=> [
+                    'class'=> 'texte-formulaire'
+                ]
+            ])
+            ->add('contenu', TextType::class, [
+                'attr'=> [
+                    'class'=> 'texte-formulaire'
+                ]
+            ])
+            ->add('dateDebut', DateType::class,[
+                'widget'=>'single_text',
+                'attr'=> [
+                    'class'=> 'date-formulaire'
+                ]
+            ])
+            ->add('dateFin', DateType::class,[
+                'widget'=>'single_text',
+                'attr'=> [
+                    'class'=> 'date-formulaire'
+                ]
+            ])
+            ->add('visibilite', TextType::class, [
+                'attr'=> [
+                    'class'=> 'texte-formulaire'
+                ]
+            ])
             ->add('utilisateur', EntityType::class, [
                 'class' => Utilisateur::class,
+                'attr'=> [
+                    'class'=> 'texte-formulaire'
+                ]
             ])
-            ->add('Valider', SubmitType::class)
+            ->add('Valider', SubmitType::class, [
+                'attr'=> [
+                    'class'=> 'valider-btn-formulaire'
+                ]
+            ])
         ;
     }
 
