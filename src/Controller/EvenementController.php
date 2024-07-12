@@ -25,9 +25,12 @@ class EvenementController extends AbstractController
     
     // ------------- FORMULAIRE CREATION NOUVEL EVENEMENT -------------
     #[Route('/evenement/new', name: 'new_evenement')]
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
+    #[Route('/evenement/{id}/edit', name: 'edit_evenement')]
+    public function new_edit(Evenement $evenement = null, Request $request, EntityManagerInterface $entityManager): Response
     {
-        $evenement = new Evenement();
+        if (!$evenement) {
+            $evenement = new Evenement();
+        }
         
         $form = $this->createForm(EvenementType::class, $evenement);
 
@@ -42,7 +45,8 @@ class EvenementController extends AbstractController
         }
         
         return $this->render('evenement/new.html.twig',[
-            'formAddEvenement'=> $form
+            'formAddEvenement'=> $form,
+            'edit'=> $evenement->getId()
         ]);
     }
 

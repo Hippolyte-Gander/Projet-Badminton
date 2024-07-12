@@ -20,17 +20,17 @@ class EvenementType extends AbstractType
         $builder
             ->add('titre', TextType::class, [
                 'attr'=> [
-                    'class'=> 'texte-formulaire'
+                    'class'=> 'demi-barre-formulaire'
                 ]
             ])
             ->add('description', TextType::class, [
                 'attr'=> [
-                    'class'=> 'texte-formulaire'
+                    'class'=> 'demi-barre-formulaire'
                 ]
             ])
             ->add('contenu', TextType::class, [
                 'attr'=> [
-                    'class'=> 'texte-formulaire'
+                    'class'=> 'contenu-formulaire'
                 ]
             ])
             ->add('dateDebut', DateTimeType::class,[

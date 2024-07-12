@@ -3,10 +3,32 @@
 {% block title %}Ajouter un événement{% endblock %}
 
 {% block body %}
-<h1>Créer un événement</h1>
 
-{{ form(formAddEvenement) }}
+    {% if edit %}
+        <h4>Modifier un événement</h4>
+    {% else %}
+        <h4>Créer un événement</h4>
+    {% endif %}
+
+
+    <div class="formulaire">
+        {{ form_start(formAddEvenement) }}
+
+            {{ form_row(formAddEvenement.titre) }}
+            {{ form_row(formAddEvenement.description) }}
+            {{ form_row(formAddEvenement.contenu) }}
+            {{ form_row(formAddEvenement.dateDebut) }}
+            {{ form_row(formAddEvenement.dateFin) }}
+            {{ form_row(formAddEvenement.visibilite) }}
+            {{ form_row(formAddEvenement.utilisateur) }}
+
+        {{ form_end(formAddEvenement) }}
+    </div>
+
 {% endblock %}
+
+
+
 {# 
 icône utilisateur
 <i class="fa-regular fa-user"></i>

@@ -3,10 +3,14 @@
 {% block title %}Liste des événements{% endblock %}
 
 {% block body %}
-<h1>Liste des événements</h1>
+<h4>Liste des événements</h4>
+<a class="texte-utilisateur" href=" {{ path('new_evenement') }} ">Créer un événement</a>
 
 {% for evenement in evenements %}
-    <p><a class="texte-utilisateur" href=" {{ path('show_evenement', {'id': evenement.id}) }} ">{{ evenement }}</a></p>
+    <div class="ligne">
+        <a class="texte-utilisateur" href=" {{ path('show_evenement', {'id': evenement.id}) }} ">{{ evenement }}</a>
+        <a class="btn-editer" href="{{ path('edit_evenement', {'id': evenement.id}) }}">Éditer</a>
+    </div>
 {% endfor %}
 
 {% endblock %}
