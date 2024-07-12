@@ -11,6 +11,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 
 class EvenementType extends AbstractType
 {
@@ -32,13 +33,13 @@ class EvenementType extends AbstractType
                     'class'=> 'texte-formulaire'
                 ]
             ])
-            ->add('dateDebut', DateType::class,[
+            ->add('dateDebut', DateTimeType::class,[
                 'widget'=>'single_text',
                 'attr'=> [
                     'class'=> 'date-formulaire'
                 ]
             ])
-            ->add('dateFin', DateType::class,[
+            ->add('dateFin', DateTimeType::class,[
                 'widget'=>'single_text',
                 'attr'=> [
                     'class'=> 'date-formulaire'
