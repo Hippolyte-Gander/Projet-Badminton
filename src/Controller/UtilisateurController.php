@@ -11,6 +11,8 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class UtilisateurController extends AbstractController
 {
+    // ------------- AFFICHER LISTE DES UTILISATEURS -------------
+    
     #[Route('/utilisateur', name: 'app_utilisateur')]
     public function index(UtilisateurRepository $utilisateurRepository): Response
     {
@@ -19,7 +21,8 @@ class UtilisateurController extends AbstractController
             'utilisateurs' => $utilisateurs
         ]);
     }
-
+    
+    // ------------- AFFICHER DÉTAILS -------------
     #[Route('/utilisateur/{id}', name: 'show_utilisateur')]
     public function show(Utilisateur $utilisateur): Response
     {

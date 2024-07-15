@@ -14,7 +14,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class EvenementController extends AbstractController
 {
-        // ------------- AFFICHER LISTE DES EVENEMENTS -------------
+    // ------------- AFFICHER LISTE DES EVENEMENTS -------------
     #[Route('/evenement', name: 'app_evenement')]
     public function index(EvenementRepository $evenementRepository): Response
     {
