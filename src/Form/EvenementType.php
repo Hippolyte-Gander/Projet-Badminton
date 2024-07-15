@@ -46,6 +46,7 @@ class EvenementType extends AbstractType
                 ]
             ])
             ->add('visibilite', TextType::class, [
+                'required'=> false,
                 'attr'=> [
                     'class'=> 'texte-formulaire'
                 ]

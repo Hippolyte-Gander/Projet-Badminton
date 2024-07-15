@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Evenement;
 use App\Form\EvenementType;
 use App\Repository\EvenementRepository;
+use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -49,13 +50,22 @@ class EvenementController extends AbstractController
             'edit'=> $evenement->getId()
         ]);
     }
+    // ------------- SUPRIMER UN EVENEMENT -------------
+    #[Route('/evenement/{id}/suppr', name: 'suppr_evenement')]
+    public function supprEvenement(Evenement $evenement, EntityManagerInterface $entityManager)
+    {
+        $entityManager->remove($evenement);
+        $entityManager->flush();
 
-        // ------------- AFFICHER UN EVENEMENT -------------
-        #[Route('/evenement/{id}', name: 'show_evenement')]
-        public function show(Evenement $evenement): Response
-        {
-            return $this->render('evenement/show.html.twig', [
-                'evenement' => $evenement
-            ]);
-        }
+        return $this->redirectToRoute('app_evenement');
+    }
+
+    // ------------- AFFICHER UN EVENEMENT -------------
+    #[Route('/evenement/{id}', name: 'show_evenement')]
+    public function show(Evenement $evenement): Response
+    {
+        return $this->render('evenement/show.html.twig', [
+            'evenement' => $evenement
+        ]);
+    }
 }
