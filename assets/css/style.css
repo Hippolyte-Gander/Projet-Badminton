@@ -131,7 +131,7 @@ h1 {
 main {
     margin-top: 80px;
     min-height: 100vh;
-    background: url('../img/bg1-terrain.jpg') no-repeat;
+    background: url('../img/bg1-terrain-sombre.jpg') no-repeat;
     background-size: cover;
     /* background-position: center; */
 }
