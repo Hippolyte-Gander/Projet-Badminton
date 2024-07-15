@@ -10,6 +10,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 
@@ -45,8 +46,12 @@ class EvenementType extends AbstractType
                     'class'=> 'date-formulaire'
                 ]
             ])
-            ->add('visibilite', TextType::class, [
-                'required'=> false,
+            ->add('visibilite', ChoiceType::class, [
+                'choices' => [
+                    'Tous' => 'tous',
+                    'Membres' => 'membres',
+                    'Comité' => 'admins',
+                ],
                 'attr'=> [
                     'class'=> 'texte-formulaire'
                 ]
