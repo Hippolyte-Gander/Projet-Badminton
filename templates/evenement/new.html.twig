@@ -13,16 +13,28 @@
 
     <div class="formulaire">
         {{ form_start(formAddEvenement) }}
-
-            {{ form_row(formAddEvenement.titre) }}
+        <div class="row">
+            {{ form_row(formAddEvenement.titre) }}    
             {{ form_row(formAddEvenement.description) }}
-            {{ form_row(formAddEvenement.contenu) }}
-            {{ form_row(formAddEvenement.dateDebut) }}
+        </div>
+        <div class="row">
+        {{ form_row(formAddEvenement.contenu) }}
+        </div>
+        <div class="row">
+        {{ form_row(formAddEvenement.dateDebut) }}
+        </div>
+        <div class="row">
             {{ form_row(formAddEvenement.dateFin) }}
-            {{ form_row(formAddEvenement.visibilite) }}
+        </div>
+        <div class="row">
+            {{ form_row(formAddEvenement.visibilite) }}</div>
+            <div class="row">
             {{ form_row(formAddEvenement.utilisateur) }}
+        </div>
+        <div class="row">
 
-        {{ form_end(formAddEvenement) }}
+            {{ form_end(formAddEvenement) }}
+        </div>
     </div>
 
 {% endblock %}
