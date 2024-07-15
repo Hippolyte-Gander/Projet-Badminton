@@ -73,25 +73,30 @@ nav a:hover {
 }
 
 .connexion:hover {
-    text-decoration: underline;
+    text-decoration: none;
     color:  rgb(0, 0, 0);
+    transition: 0.2s;
+    box-shadow: 0 0 20px rgb(161, 161, 161);
 }
 
 .deconnexion:hover {
-    text-decoration: underline;
+    text-decoration: none;
     color:  rgb(255, 255, 255);
+    transition: 0.2s;
+    box-shadow: 0 0 20px rgb(255, 255, 255);
 }
 
 .inscription:hover {
-    text-decoration: underline;
+    text-decoration: none;
     color:  rgb(0, 0, 0);
+    transition: 0.2s;
+    box-shadow: 0 0 20px rgb(161, 161, 161);
 }
 
 /* --------------- FOOTER ---------------- */
 
 footer {
-    background-color: rgb(236, 236, 236);
-    color: black;
+    background: rgb(22, 22, 22);
     height: 70px;
     font-size: 1.25rem;
     display: flex;
@@ -101,12 +106,12 @@ footer {
 }
 
 footer a {
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 footer a:hover {
     text-decoration: underline;
-    color:  rgb(0, 0, 0);
+    color:  rgb(255, 255, 255);
 }
 
 /* --------------- TITRE PRINCIPAL ---------------- */
