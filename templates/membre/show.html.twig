@@ -3,13 +3,28 @@
 {% block title %}Détails membre{% endblock %}
 
 {% block body %}
-<h4>Détails de {{ membre.prenom }} {{ membre.nom }} </h4>
+<h4>Détails de {{ membre.prenom }} {{ membre.nom }}</h4>
 
+<p>Nom : {{ membre.nom }}</p>
+<p>Prénom : {{ membre.prenom }}</p>
+<p>Email : {{ membre.email }}</p>
+<p>Rôle : {{ membre.role }}</p>
+<p>Numéro de Licence : {{ membre.numLicence }}</p>
+<p>Date d'Inscription : {{ membre.dateInscription ? membre.dateInscription|date('d/m/Y') : 'N/A' }}</p>
+<p>Numéro de Téléphone : {{ membre.numTel }}</p>
+<p>Adresse : {{ membre.adresse }}</p>
+<p>Ville : {{ membre.ville }}</p>
+<p>Code Postal : {{ membre.cp }}</p>
+<p>Date de Naissance : {{ membre.dateNaissance ? membre.dateNaissance|date('d/m/Y') : 'N/A' }}</p>
 
-    {# <p>Nom : {{ membre.utilisateur.nom}}</p>
-    <p>Prénom : {{ membre.utilisateur.prenom}}</p>
-    <p>Date d'inscription : {{ membre.dateInscriptionFormatee}}</p>
-    <p>Email : {{ membre.utilisateur.email}}</p>
-    <p>Rôle : {{ membre.utilisateur.role}}</p> #}
+{% if membre.photo %}
+    <p>Photo : <img src="{{ asset('uploads/photos/' ~ membre.photo) }}" alt="Photo de {{ membre.prenom }} {{ membre.nom }}"></p>
+{% else %}
+    <p>Photo : N/A</p>
+{% endif %}
 
 {% endblock %}
+
+
+
+    {# <p>Date d'inscription : {{ membre.dateInscriptionFormatee}}</p> #}
