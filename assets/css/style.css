@@ -121,7 +121,6 @@ footer a:hover {
     padding: 50px 0px;
     align-items: center;
     text-align: center;
-    border: solid red;
 }
 
 h1 {
@@ -136,14 +135,14 @@ h1 {
 main {
     margin-top: 80px;
     min-height: 100vh;
-    background: url('../img/bg1-terrain-sombre.jpg') no-repeat;
+    background: url('../img/bg1-terrain-tres-sombre.jpg') no-repeat;
     background-size: cover;
     /* background-position: center; */
 }
 
 .club {
     color: white;
-    padding: 180px;
+    padding: 100px 210px;
     display: flex;
     flex-direction: column;
 }
@@ -161,10 +160,10 @@ main {
 }
 
 .titre-texte {
-    padding: 20px;
+    padding: 30px;
     margin: 30px;
-    background: rgba(15, 15, 15, 0.384);
-    border: solid red;
+    background: rgba(15, 15, 15, 0.555);
+    border: solid rgb(206, 206, 206);
     font-size: 1.5rem;
 }
 
@@ -209,6 +208,40 @@ h4 {
     padding: 10px;
     background-color: rgb(226, 0, 0);
     border-radius: 10px;
+}
+
+/* --------------- LISTE UTILISATEUR ---------------- */
+
+.utilisateurs-container {
+    margin-top: 80px;
+    min-height: 100vh;
+    background: url('../img/terrain-bad-sombre.jpg') no-repeat;
+    background-size: cover;
+}
+
+.utilisateurs-container h4 {
+    padding: 60px;
+    margin: 60px;
+    color: white;
+}
+
+.utilisateurs-container p {
+    padding: 60px;
+    margin: 60px;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    background: #3a3a3a85;
+    border-radius: 5px;
+}
+
+.utilisateurs-container a {
+    color: white;
+    margin: 10px;
+}
+
+.utilisateurs-container a:hover {
+    text-decoration: underline;
 }
 
 /* --------------- FORMULAIRE ---------------- */

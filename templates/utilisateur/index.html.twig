@@ -4,14 +4,16 @@
 
 {% block body %}
 
-<main>
+<div class="utilisateurs-container">
 
     <h4>Liste des utilisateurs</h4>
-    
-    {% for utilisateur in utilisateurs %}
-        <p><a class="texte-utilisateur" href=" {{ path('show_utilisateur', {'id': utilisateur.id}) }} " class="texte-utilisateur">{{ utilisateur}}</a></p>
-    {% endfor %}
-    
-</main>
+
+    <p>
+        {% for utilisateur in utilisateurs %}
+            <a class="texte-utilisateur" href=" {{ path('show_utilisateur', {'id': utilisateur.id}) }} ">{{ utilisateur}}</a>
+        {% endfor %}
+    </p>
+
+</div>
 
 {% endblock %}
