@@ -3,7 +3,7 @@
 {% block title %}Liste membres{% endblock %}
 
 {% block body %}
-<h1>Liste des membres</h1>
+<h4>Liste des membres</h4>
 
 {% for membre in membres %}
     <p><a class="texte-utilisateur" href=" {{ path('show_membre', {'id': membre.id}) }} ">{{ membre}}</a></p>
