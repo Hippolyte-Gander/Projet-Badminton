@@ -118,12 +118,14 @@ footer a:hover {
 
 .title {
     width: 100%;
-    padding: 50px 0px;
+    padding: 50px 20px;
     align-items: center;
     text-align: center;
+    background-color: black;
 }
 
 h1 {
+    margin-top: 80px;
     color: rgb(255, 255, 255);
     font-family: Poppins;
     font-weight: 800;
@@ -133,18 +135,36 @@ h1 {
 /* --------------- PAGE ACCUEIL ---------------- */
 
 main {
-    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+}
+
+.accueil {
     min-height: 100vh;
     background: url('../img/bg1-terrain-tres-sombre.jpg') no-repeat;
     background-size: cover;
-    /* background-position: center; */
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 20px;
+}
+
+.a-venir {
+    border: solid white;
+    width: 30%;
+    margin: 30px;
+}
+
+.a-venir h3, .a-venir h5, .a-venir p {
+    color: white;
 }
 
 .club {
     color: white;
-    padding: 100px 210px;
     display: flex;
     flex-direction: column;
+    width: 70%;
+    margin: 30px;
+    gap: 30px;
 }
 
 .club-description,
@@ -156,12 +176,12 @@ main {
 
 .club img {
     width: 50dvh;
-    margin: 30px;
 }
 
 .titre-texte {
+    display: flex;
+    flex-direction: column;
     padding: 30px;
-    margin: 30px;
     background: rgba(15, 15, 15, 0.555);
     border: solid rgb(206, 206, 206);
     font-size: 1.5rem;
