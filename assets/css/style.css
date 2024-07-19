@@ -315,6 +315,10 @@ select {
     display: flex;
 }
 
+.required {
+    color: black;
+}
+
 .demi-barre-formulaire {
     width: 50%;
     padding: 16px 20px;
