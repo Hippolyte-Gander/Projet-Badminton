@@ -173,4 +173,15 @@ class Evenement
         return $this->titre;
     }
 
+    // Dates formatées
+
+    public function dateDebutFormatee(): ?string
+    {
+        return $this->dateDebut->format('d/m/Y H:i');
+    }
+    public function dateFinFormatee(): ?string
+    {
+        return $this->dateFin->format('d/m/Y H:i');
+    }
+
 }

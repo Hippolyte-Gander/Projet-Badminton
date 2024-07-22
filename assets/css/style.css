@@ -228,30 +228,12 @@ main {
 /* --------------- GÉNÉRAL ---------------- */
 
 h4 {
-    color: black;
+    color: rgb(255, 255, 255);
     padding: 100px 20px 20px 20px;
-}
-
-.ligne {
-    padding: 30px;
 }
 
 .texte-utilisateur {
     color: rgb(0, 0, 0);
-}
-
-.btn-editer {
-    color: black;
-    padding: 10px;
-    background-color: orange;
-    border-radius: 10px;
-}
-
-.btn-supprimer {
-    color: black;
-    padding: 10px;
-    background-color: rgb(226, 0, 0);
-    border-radius: 10px;
 }
 
 /* --------------- LISTE UTILISATEUR ---------------- */
@@ -322,6 +304,53 @@ h4 {
     text-decoration: underline;
 }
 
+/* --------------- LISTE ÉVÉNEMENTS ---------------- */
+
+.liste-evenement-background {
+    background: url('../img/volants-sur-terrain-sombre.jpg') no-repeat;
+    background-size: cover;
+    min-height: 90lvh;
+    display: flex;
+    flex-direction: column;
+}
+
+.liste-evenement-background a {
+    color: white;
+    padding: 20px;
+}
+
+table {
+    width: 80%;
+    border: solid 2px white;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+.titre-colonne {
+    font-weight: 600;
+}
+
+td, tr {
+    background-color: rgba(39, 39, 39, 0.700);
+    padding: 30px;
+    border: solid 1px white;
+    text-align: center;
+}
+
+.btn-editer {
+    color: black;
+    padding: 10px;
+    background-color: orange;
+    border-radius: 10px;
+}
+
+.btn-supprimer {
+    color: black;
+    padding: 10px;
+    background-color: rgb(226, 0, 0);
+    border-radius: 10px;
+}
+
 /* --------------- FORMULAIRE ---------------- */
 
 .formulaire-background {
@@ -347,14 +376,14 @@ h4 {
     color: rgb(255, 255, 255);
 }
 
-.row {
+.row-form {
     display: flex;
     flex-direction: row;
     width: 100%;
     margin: 20px 0px;
 }
 
-.col {
+.col-form {
     display: flex;
     flex-direction: column;
     width: 50%;
@@ -417,9 +446,9 @@ h4 {
     margin: 4px 2px;
     cursor: pointer;
 }
+
 .valider-btn-formulaire:hover {
     background-color: #08d48a;
-
 }
 
 /* input[type=text]{

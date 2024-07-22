@@ -3,15 +3,44 @@
 {% block title %}Liste des événements{% endblock %}
 
 {% block body %}
-<h4>Liste des événements</h4>
-<a class="texte-utilisateur" href=" {{ path('new_evenement') }} ">Créer un événement</a>
 
-{% for evenement in evenements %}
-    <div class="ligne">
-        <a class="texte-utilisateur" href=" {{ path('show_evenement', {'id': evenement.id}) }} ">{{ evenement }}</a>
-        <a class="btn-editer" href="{{ path('edit_evenement', {'id': evenement.id}) }}">Éditer</a>
-        <a class="btn-supprimer" href="{{ path('suppr_evenement', {'id': evenement.id}) }}">Supprimer</a>
-    </div>
-{% endfor %}
+<div class="liste-evenement-background">
 
+    <h4>Liste des événements</h4>
+    <a class="texte-utilisateur" href=" {{ path('new_evenement') }} ">Créer un événement</a><br>
+
+
+    <table>
+        <tr class="titre-colonne">
+            <td>Nom événement</td>
+            <td>Date de début</td>
+            <td>Date de fin</td>
+            <td>Éditer</td>
+            <td>Supprimer</td>
+        </tr>
+
+        {% for evenement in evenements %}
+            <tr>
+                <td>
+                    <a class="texte-utilisateur" href=" {{ path('show_evenement', {'id': evenement.id}) }} ">{{ evenement.titre }}</a>
+                </td>
+                <td>
+                    <a class="texte-utilisateur" href=" {{ path('show_evenement', {'id': evenement.id}) }} ">{{ evenement.dateDebutFormatee }}</a>
+                </td>
+                <td>
+                    <a class="texte-utilisateur" href=" {{ path('show_evenement', {'id': evenement.id}) }} ">{{ evenement.dateFinFormatee }}</a>
+                </td>
+                <td>
+                    <a class="btn-editer" href="{{ path('edit_evenement', {'id': evenement.id}) }}">Éditer</a>
+                </td>
+                <td>
+                    <a class="btn-supprimer" href="{{ path('suppr_evenement', {'id': evenement.id}) }}">Supprimer</a>
+                </td>
+                
+            </tr>
+        {% endfor %}
+
+    </table>
+
+</div>
 {% endblock %}
