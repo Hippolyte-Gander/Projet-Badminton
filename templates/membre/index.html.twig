@@ -3,10 +3,16 @@
 {% block title %}Liste membres{% endblock %}
 
 {% block body %}
-<h4>Liste des membres</h4>
 
-{% for membre in membres %}
-    <p><a class="texte-utilisateur" href=" {{ path('show_membre', {'id': membre.id}) }} ">{{ membre.prenom }} {{ membre.nom }}</a></p>
-{% endfor %}
+<div class="membre-container">
+
+    <h4>Liste des membres</h4>
+
+    <p>
+        {% for membre in membres %}
+            <a class="texte-membre" href=" {{ path('show_membre', {'id': membre.id}) }} ">{{ membre.prenom }} {{ membre.nom }}</a>
+        {% endfor %}
+    </p>
+</div>
 
 {% endblock %}

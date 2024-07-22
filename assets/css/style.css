@@ -288,6 +288,40 @@ h4 {
     text-decoration: underline;
 }
 
+/* --------------- LISTE MEMBRES ---------------- */
+
+.membre-container {
+    margin-top: 80px;
+    min-height: 100vh;
+    background: url('../img/terrain-bad-sombre.jpg') no-repeat;
+    background-size: cover;
+}
+
+.membre-container h4 {
+    padding: 60px;
+    margin: 60px;
+    color: white;
+}
+
+.membre-container p {
+    padding: 60px;
+    margin: 60px;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    background: #3a3a3a85;
+    border-radius: 5px;
+}
+
+.membre-container a {
+    color: white;
+    margin: 10px;
+}
+
+.membre-container a:hover {
+    text-decoration: underline;
+}
+
 /* --------------- FORMULAIRE ---------------- */
 
 /* input[type=text] {
