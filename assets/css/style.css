@@ -324,27 +324,14 @@ h4 {
 
 /* --------------- FORMULAIRE ---------------- */
 
-/* input:focus {
-    border: 3px solid #000000;
-    background-color: rgb(231, 231, 231);
-  }
-
-select {
-    width: 100%;
-    padding: 16px 20px;
-    border: none;
-    border-radius: 4px;
-    background-color: #f1f1f1;
-} */
-
 .formulaire-background {
-    background: url('../img/filet-volant-sombre.jpg') no-repeat;
+    background: url('../img/volant-sur-ligne-sombre.jpg') no-repeat;
     background-size: cover;
 }
 
 .formulaire {
     display: flex;
-    padding: 30px;
+    padding: 50px;
 }
 
 .formulaire form {
@@ -352,12 +339,12 @@ select {
 }
 
 .required {
-    color: black;
+    color: rgb(255, 255, 255);
     padding-right: 20px;
 }
 
 .texte-formulaire {
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 .row {
@@ -377,21 +364,31 @@ select {
     width: 90%;
     padding: 12px 20px;
     margin: 10px 0;
-    background-color: rgb(212, 212, 212);
+    background-color: rgb(39, 39, 39);
+    color: white;
+    border: solid 1px rgb(165, 165, 165);
     border-radius: 5px;
 }
 
 .formulaire textarea {
     margin-top: 10px;
+    padding: 10px;
     min-width: 190%;
+    max-width: 190%;
     min-height: 15lvh;
+    background-color: rgb(39, 39, 39);
+    color: white;
+    border: solid 1px rgb(165, 165, 165);
+    border-radius: 5px;
 }
 
 .formulaire input[type=datetime-local] {
     width: 90%;
     padding: 12px 20px;
     margin: 10px 0;
-    background-color: rgb(212, 212, 212);
+    background-color: rgb(39, 39, 39);
+    color: white;
+    border: solid 1px rgb(165, 165, 165);
     border-radius: 5px;
 }
 
@@ -399,32 +396,31 @@ select {
     width: 90%;
     padding: 12px 20px;
     margin: 10px 0;
-    background-color: rgb(212, 212, 212);
+    background-color: rgb(39, 39, 39);
+    color: white;
+    border: solid 1px rgb(165, 165, 165);
     border-radius: 5px;
 }
 
 .formulaire select option{
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
-/* select .contenu-formulaire {
-    width: 100%;
-    padding: 16px 20px;
-    border: none;
-    border-radius: 4px;
-    background-color: #f1f1f1;
-}
 
 .valider-btn-formulaire {
     background-color: #04AA6D;
     border: 2px solid black;
     border-radius: 5px;
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 16px 32px;
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
-  } */
+}
+.valider-btn-formulaire:hover {
+    background-color: #08d48a;
+
+}
 
 /* input[type=text]{
 }
