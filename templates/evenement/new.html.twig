@@ -4,6 +4,8 @@
 
 {% block body %}
 
+<div class="formulaire-background">
+
     {% if edit %}
         <h4>Modifier un événement</h4>
     {% else %}
@@ -14,30 +16,41 @@
     <div class="formulaire">
         {{ form_start(formAddEvenement) }}
         <div class="row">
-            {{ form_row(formAddEvenement.titre) }}    
+            <div class="col">
+                {{ form_row(formAddEvenement.titre) }}    
+            </div>
+            <div class="col">
             {{ form_row(formAddEvenement.description) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                {{ form_row(formAddEvenement.contenu) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                {{ form_row(formAddEvenement.dateDebut) }}
+            </div>
+            <div class="col">
+                {{ form_row(formAddEvenement.dateFin) }}
+            </div>
         </div>
         <div class="row">
-        {{ form_row(formAddEvenement.contenu) }}
-        </div>
-        <div class="row">
-        {{ form_row(formAddEvenement.dateDebut) }}
-        </div>
-        <div class="row">
-            {{ form_row(formAddEvenement.dateFin) }}
-        </div>
-        <div class="row">
-            {{ form_row(formAddEvenement.visibilite) }}
-        </div>
-            <div class="row">
+            <div class="col">
+                {{ form_row(formAddEvenement.visibilite) }}
+            </div>
+            <div class="col">
             {{ form_row(formAddEvenement.utilisateur) }}
+            </div>
         </div>
-        <div class="row">
 
             {{ form_end(formAddEvenement) }}
-        </div>
     </div>
 
+</div>
 {% endblock %}
 
 

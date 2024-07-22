@@ -13,6 +13,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class EvenementType extends AbstractType
 {
@@ -20,33 +21,39 @@ class EvenementType extends AbstractType
     {
         $builder
             ->add('titre', TextType::class, [
+                'label'=>'Titre événement',
                 'attr'=> [
-                    'class'=> 'demi-barre-formulaire'
+                    'class'=> 'texte-formulaire'
                 ]
             ])
             ->add('description', TextType::class, [
+                'label'=>'Description événement',
                 'attr'=> [
-                    'class'=> 'demi-barre-formulaire'
+                    'class'=> 'texte-formulaire'
                 ]
             ])
-            ->add('contenu', TextType::class, [
+            ->add('contenu', TextareaType::class, [
+                'label'=>"Contenu de l'événement",
                 'attr'=> [
-                    'class'=> 'contenu-formulaire'
+                    'class'=> 'texte-formulaire'
                 ]
             ])
             ->add('dateDebut', DateTimeType::class,[
+                'label'=>'Date de début',
                 'widget'=>'single_text',
                 'attr'=> [
-                    'class'=> 'date-formulaire'
+                    'class'=> 'texte-formulaire'
                 ]
             ])
             ->add('dateFin', DateTimeType::class,[
+                'label'=>'Date de fin',
                 'widget'=>'single_text',
                 'attr'=> [
-                    'class'=> 'date-formulaire'
+                    'class'=> 'texte-formulaire'
                 ]
             ])
             ->add('visibilite', ChoiceType::class, [
+                'label'=>'Visible par',
                 'choices' => [
                     'Tous' => 'tous',
                     'Membres' => 'membres',
@@ -57,6 +64,7 @@ class EvenementType extends AbstractType
                 ]
             ])
             ->add('utilisateur', EntityType::class, [
+                'label'=>'Créé par',
                 'class' => Utilisateur::class,
                 'attr'=> [
                     'class'=> 'texte-formulaire'
