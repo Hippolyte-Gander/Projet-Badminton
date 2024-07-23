@@ -25,10 +25,10 @@
                     <a class="texte-utilisateur" href=" {{ path('show_evenement', {'id': evenement.id}) }} ">{{ evenement.titre }}</a>
                 </td>
                 <td>
-                    <a class="texte-utilisateur" href=" {{ path('show_evenement', {'id': evenement.id}) }} ">{{ evenement.dateDebutFormatee }}</a>
+                    <a class="texte-utilisateur" href=" {{ path('show_evenement', {'id': evenement.id}) }} "> {{ evenement.dateDebutFormatee }} à {{ evenement.heureDebutFormatee }}</a>
                 </td>
                 <td>
-                    <a class="texte-utilisateur" href=" {{ path('show_evenement', {'id': evenement.id}) }} ">{{ evenement.dateFinFormatee }}</a>
+                    <a class="texte-utilisateur" href=" {{ path('show_evenement', {'id': evenement.id}) }} "> {{ evenement.dateFinFormatee }} à {{ evenement.heureFinFormatee }}</a>
                 </td>
                 <td>
                     <a class="btn-editer" href="{{ path('edit_evenement', {'id': evenement.id}) }}">Éditer</a>

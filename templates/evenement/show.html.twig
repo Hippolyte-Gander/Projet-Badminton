@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails événement{% endblock %}
+
+{% block body %}
+
+<div class="det-evenement-background">
+
+    <h4>Détails de {{ evenement.titre }}</h4>
+
+    <p>
+        Description : <br>
+        {{ evenement.description }}</p>
+
+    <p>
+        Date de début : {{ evenement.dateDebutFormatee }} à {{ evenement.heureDebutFormatee }} <br>
+        Date de fin : {{ evenement.dateFinFormatee }} à {{ evenement.heureFinFormatee }}
+    </p>
+
+    <p>{{ evenement.contenu }}</p>
+
+</div>
+
+{% endblock %}
