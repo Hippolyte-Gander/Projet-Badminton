@@ -4,8 +4,8 @@ namespace App\Controller;
 
 use App\Entity\Evenement;
 use App\Form\EvenementType;
-use App\Repository\EvenementRepository;
 use Doctrine\ORM\EntityManager;
+use App\Repository\EvenementRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,6 +14,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class EvenementController extends AbstractController
 {
+
     // ------------- AFFICHER LISTE DES EVENEMENTS -------------
     #[Route('/evenement', name: 'app_evenement')]
     public function index(EvenementRepository $evenementRepository): Response
@@ -23,7 +24,20 @@ class EvenementController extends AbstractController
             'evenements' => $evenements
         ]);
     }
+
+    // ------------- AFFICHER LISTE DES 4 PROCHAINS EVENEMENTS -------------
     
+    #[Route('/', name: 'app_home')]
+    public function nextEvents(EvenementRepository $evenementRepository): Response
+    {
+        $evenements = $evenementRepository->findNextEvents(4);
+
+        return $this->render('evenement/index.html.twig', [
+            'evenements' => $evenements
+        ]);
+    }
+
+
     // ------------- FORMULAIRE CREATION NOUVEL EVENEMENT -------------
     #[Route('/evenement/new', name: 'new_evenement')]
     #[Route('/evenement/{id}/edit', name: 'edit_evenement')]

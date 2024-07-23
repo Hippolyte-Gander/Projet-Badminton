@@ -12,21 +12,18 @@
 
         <div class="a-venir">
             <h3>Événements à venir</h3>
+
             <div class="titre-texte">
-                <h5>Réunion mensuelle</h5>
 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Nesciunt ex suscipit similique maiores magnam quidem quia nisi libero qui mollitia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, voluptatibus?</p>
+                {% for evenement in evenements %}
 
-                <h5>Réunion mensuelle</h5>
+                    <h5>{{ evenement.titre }}</h5>
 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Nesciunt ex suscipit similique maiores magnam quidem quia nisi libero qui mollitia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, voluptatibus?</p>
+                    <a class="texte-utilisateur" href=" {{ path('show_evenement', {'id': evenement.id}) }} ">Début : {{ evenement.dateDebutFormatee }} à {{ evenement.heureDebutFormatee }}</a>
+                    <a class="texte-utilisateur" href=" {{ path('show_evenement', {'id': evenement.id}) }} ">Fin : {{ evenement.dateFinFormatee }} à {{ evenement.heureFinFormatee }}</a>
+                    <a class="texte-utilisateur" href=" {{ path('show_evenement', {'id': evenement.id}) }} ">{{ evenement.description }}</a>
 
-                <h5>Réunion mensuelle</h5>
-
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Nesciunt ex suscipit similique maiores magnam quidem quia nisi libero qui mollitia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, voluptatibus?</p>
+                {% endfor %}
             </div>
         </div>
 

@@ -133,7 +133,11 @@ h1 {
 }
 
 h3 {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 5vw + 0.5rem, 2.25rem);
+}
+
+h5 {
+    font-size: clamp(1rem, 5vw, 1.75rem);
 }
 
 /* --------------- PAGE ACCUEIL ---------------- */
@@ -152,6 +156,10 @@ main {
     padding: 0px 20px;
 }
 
+.accueil h3 {
+    text-decoration: underline;
+}
+
 .a-venir {
     border-left: solid 1px white;
     width: 30%;
@@ -165,6 +173,10 @@ main {
 
 .a-venir h3 {
     margin: 30px;
+}
+
+.a-venir a {
+    color: white;
 }
 
 .club {
@@ -355,6 +367,8 @@ td, tr {
 
 .det-evenement-background {
     background: url('../img/terrain-bad-sombre.jpg') no-repeat;
+    background-size: cover;
+    min-height: 80lvh;
 }
 
 .det-evenement-background p {
