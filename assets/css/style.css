@@ -17,12 +17,13 @@ header {
     left: 0;
     width: 100%;
     background: rgb(22, 22, 22);
-    padding: 20px 100px;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
     max-height: 80px;
+    min-height: 80px;
     border-bottom: solid 2px white;
 }
 
@@ -38,30 +39,87 @@ a {
 nav {
     font-size: 1.25rem;
     display: flex;
-    gap: 30px;
+    justify-content: space-between;
 }
 
-nav a:hover {
+.liens a:hover {
     text-decoration: underline;
     color:  rgb(255, 255, 255);
 }
 
+.liens a {
+    padding: 0 10px;
+}
+
+header .menu-mobile {
+    display: none;
+}
+
+/* --- Bouton barre --- */
+
+.toggle-btn i {
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+.toggle-btn i:hover {
+    transition: 0.2s;
+    color: red;
+}
+
+/* Menu mobile */
+
+@media (max-width: 1000px) {
+
+    header .menu-mobile {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header {
+        padding: 20px 0 20px 50px;
+        gap: 0;
+        max-height: none;
+        justify-content: left;
+    }
+
+    header .login,
+    header .logo,
+    nav a,
+    .login a {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: none;
+    }
+    
+    .mobile-croix {
+        /* display: none; */
+        text-align: end;
+        width: 100%;
+    }
+}
+
+
+/* --- Boutons connexion --- */
 .login {
     display: flex;
     gap: 20px;
 }
 
-.connexion {
+.deconnexion {
     background-color: white;
     color: black;
+    border: solid 1px rgb(0, 0, 0);
     border-radius: 5px;
     padding: 10px 15px;
 }
 
-.deconnexion {
+.connexion {
     background-color: rgb(0, 0, 0);
-    border: solid white;
-    border-width: 1px;
+    border: solid 1px white;
     border-radius: 5px;
     padding: 9px 14px;
 }
@@ -73,14 +131,14 @@ nav a:hover {
     padding: 10px 15px;
 }
 
-.connexion:hover {
+.deconnexion:hover {
     text-decoration: none;
     color:  rgb(0, 0, 0);
     transition: 0.2s;
     box-shadow: 0 0 20px rgb(161, 161, 161);
 }
 
-.deconnexion:hover {
+.connexion:hover {
     text-decoration: none;
     color:  rgb(255, 255, 255);
     transition: 0.2s;
@@ -170,7 +228,7 @@ main {
 }
 
 .a-venir h3 {
-    margin: 30px;
+    margin: 50px 30px;
 }
 
 .boucle-for-evenement h5 {
@@ -196,6 +254,7 @@ main {
 .club-activites {
     background-color: rgba(24, 25, 29, 0.7);
     border-radius: 3px;
+    flex-wrap: wrap;
 }
 
 
