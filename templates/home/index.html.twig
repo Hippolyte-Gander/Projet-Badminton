@@ -16,13 +16,13 @@
             <div class="titre-texte">
 
                 {% for evenement in evenements %}
+                    <div class="boucle-for-evenement">
+                        <h5> <a href=" {{ path('show_evenement', {'id': evenement.id}) }} "> {{ evenement.titre }}</a></h5>
 
-                    <h5>{{ evenement.titre }}</h5>
-
-                    <a class="texte-utilisateur" href=" {{ path('show_evenement', {'id': evenement.id}) }} ">Début : {{ evenement.dateDebutFormatee }} à {{ evenement.heureDebutFormatee }}</a>
-                    <a class="texte-utilisateur" href=" {{ path('show_evenement', {'id': evenement.id}) }} ">Fin : {{ evenement.dateFinFormatee }} à {{ evenement.heureFinFormatee }}</a>
-                    <a class="texte-utilisateur" href=" {{ path('show_evenement', {'id': evenement.id}) }} ">{{ evenement.description }}</a>
-
+                        <p class="texte-utilisateur">Début : {{ evenement.dateDebutFormatee }} à {{ evenement.heureDebutFormatee }}</p><br>
+                        <p>Fin : {{ evenement.dateFinFormatee }} à {{ evenement.heureFinFormatee }}</p><br>
+                        <p>{{ evenement.description }}</p>
+                    </div>
                 {% endfor %}
             </div>
         </div>
