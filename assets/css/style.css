@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    font-size: 1.15rem;
     color: rgb(255, 255, 255);
 }
 
@@ -254,7 +255,6 @@ main {
 .club-activites {
     background-color: rgba(24, 25, 29, 0.7);
     border-radius: 3px;
-    flex-wrap: wrap;
 }
 
 
